@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Q2</string>
+    <string name="num1">Number 1</string>
+    <string name="num2">Number 2</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiply">X</string>
+    <string name="divide">/</string>
+    <string name="submit">Submit</string>
+</resources>
