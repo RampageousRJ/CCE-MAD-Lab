@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Lab2_Q2</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiply">X</string>
+    <string name="divide">/</string>
+    <string name="num1">Enter Number One</string>
+    <string name="num2">Enter Number Two</string>
+</resources>
