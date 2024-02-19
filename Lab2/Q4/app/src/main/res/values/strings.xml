@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Q4</string>
-    <string name="text_view">Enter URL</string>
-    <string name="search">Search</string>
-    <string name="url">URL</string>
-    <string name="about_link"><a href='http://example.com'>http://example.com</a></string>
-    <string name="about_email"><a href='mailto:admin@example.com'>admin@example.com</a></string>
-</resources>
