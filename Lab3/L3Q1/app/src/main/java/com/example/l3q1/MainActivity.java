@@ -51,9 +51,4 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             image.setImageResource(R.drawable.softdrinks);
         }
     }
-
-    public void onClickTab(View view) {
-        TabItem id = (TabItem) findViewById(view.getId());
-        Toast.makeText(getApplicationContext(),id.toString(),Toast.LENGTH_SHORT).show();
-    }
 }
