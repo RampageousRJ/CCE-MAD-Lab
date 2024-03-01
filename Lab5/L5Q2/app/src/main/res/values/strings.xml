@@ -5,6 +5,7 @@
     <string name="from">From</string>
     <string name="submit">Submit</string>
     <string name="toggle">Round-Trip</string>
+    <string name="clear">Clear</string>
     <string-array name="destinations">
         <item>Manali</item>
         <item>Dehradun</item>

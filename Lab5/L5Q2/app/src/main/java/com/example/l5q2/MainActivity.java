@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -11,6 +12,7 @@ import android.widget.CalendarView;
 import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
     CalendarView cv;
     String finalDate;
     SimpleDateFormat df;
+    ToggleButton tb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +39,16 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         c = Calendar.getInstance();
         cv.setOnDateChangeListener(this);
         df = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        tb = findViewById(R.id.tb);
     }
 
     public void onClick(View view) {
-        Toast.makeText(getApplicationContext(),"FINAL VALUES\nFrom: "+src.getSelectedItem().toString()+"\nDestination: "+dst.getSelectedItem().toString()+"\nDate: "+finalDate,Toast.LENGTH_SHORT).show();
+        if(tb.isChecked()){
+            Toast.makeText(getApplicationContext(),"FINAL VALUES\nFrom: "+src.getSelectedItem().toString()+"\nDestination: "+dst.getSelectedItem().toString()+"\nDate: "+finalDate+"\nRound Trip",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"FINAL VALUES\nFrom: "+src.getSelectedItem().toString()+"\nDestination: "+dst.getSelectedItem().toString()+"\nDate: "+finalDate+"\nOne-Way Trip",Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -48,11 +57,16 @@ public class MainActivity extends AppCompatActivity implements DatePickerDialog.
         c.set(Calendar.MONDAY,month);
         c.set(Calendar.DAY_OF_MONTH,dayOfMonth);
         finalDate = df.format(c.getTimeInMillis());
-        Toast.makeText(getApplicationContext(),"Date: "+finalDate,Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
         finalDate = dayOfMonth+"/"+(month+1)+"/"+year;
+    }
+
+    public void clear(View view) {
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(i);
+        this.finishActivity(0);
     }
 }
