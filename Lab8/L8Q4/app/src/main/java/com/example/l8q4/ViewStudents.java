@@ -63,7 +63,7 @@
                 list.setAdapter(adapter);
                 Toast.makeText(this, "Student Deleted", Toast.LENGTH_SHORT).show();
             }
-            else if(Objects.equals(item.getTitle(), "Display")){
+            else if(item.getItemId()==R.id.Display){
                 ArrayList<String> details = dbHandler.getStudentDetails(list.getItemAtPosition(position).toString());
                 Intent i = new Intent(ViewStudents.this,DisplayStudents.class);
                 i.putExtra("regno",details.get(0));
