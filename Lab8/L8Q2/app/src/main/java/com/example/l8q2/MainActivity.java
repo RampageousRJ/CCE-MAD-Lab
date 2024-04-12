@@ -46,6 +46,7 @@
                 dbHandler.getBillItems(MainActivity.this);
                 cost.setText("Total Cost: 0$");
             });
+
         }
 
         @Override
